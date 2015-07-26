@@ -56,3 +56,12 @@ cacheSolve <- function(x, ...) {
       x$setinv(m)
       m
 }
+
+# The following code will test that this works, notice that the second print gives a message that
+# it was pulled from cached data
+
+x <- matrix(c(1,2,3,4), nrow=2)
+y <- makeCacheMatrix(x)
+print(solve(x)==cacheSolve(y))
+print(cacheSolve(y))
+
